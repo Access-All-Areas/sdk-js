@@ -1,1 +1,0 @@
-export { SingleTypeManager } from './manager';
