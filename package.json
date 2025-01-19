@@ -25,6 +25,9 @@
     }
   ],
   "browser": "./dist/bundle.browser.min.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/bundle.cjs.js",
+  "module": "./dist/bundle.esm.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

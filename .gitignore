@@ -84,7 +84,6 @@ nbproject
 
 .coverage
 .node_history
-dist
 lcov.info
 lib-cov
 logs

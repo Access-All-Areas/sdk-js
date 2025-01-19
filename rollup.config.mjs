@@ -55,9 +55,17 @@ const node_build = {
       preferBuiltins: true, // Prefer built-in modules
     }),
     // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-    commonjs(),
+    commonjs({
+      // This ensures proper CommonJS interop
+      transformMixedEsModules: true,
+      strictRequires: true
+    }),
     // Transpile
-    typescript({ tsconfig: './tsconfig.build.json' }),
+    typescript({
+      tsconfig: './tsconfig.build.json',
+      declaration: true,
+      declarationDir: './dist'
+    }),
     // Set env and global variables for browser builds
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
